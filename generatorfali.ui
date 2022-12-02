@@ -72,6 +72,9 @@
         <property name="suffix">
          <string>Hz</string>
         </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
         <property name="maximum">
          <number>9999999</number>
         </property>
