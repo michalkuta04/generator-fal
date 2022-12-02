@@ -14,6 +14,9 @@ public:
     GeneratorFali(QWidget *parent = nullptr);
     ~GeneratorFali();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::GeneratorFali *ui;
 };

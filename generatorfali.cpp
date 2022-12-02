@@ -13,3 +13,12 @@ GeneratorFali::~GeneratorFali()
     delete ui;
 }
 
+
+void GeneratorFali::on_pushButton_clicked()
+{
+    QString waveFrequency = QString::number(ui->spinBoxFrequency->value());
+    QString waveSampling = QString::number(ui->spinBoxSampling->value());
+    QLabel *outputLabel = ui->outputLabel;
+    outputLabel->setText(waveFrequency + " " + waveSampling);
+}
+

@@ -97,6 +97,45 @@
      </layout>
     </widget>
    </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>200</y>
+      <width>291</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>GroupBox</string>
+    </property>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>93</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Start</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="outputLabel">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>30</y>
+       <width>63</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
