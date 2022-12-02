@@ -19,20 +19,33 @@ void GeneratorFali::on_pushButton_clicked()
     QLabel *outputLabel = ui->outputLabel;
     if (ui->pushButton->text() == "Start")
     {
-        QString waveFrequency = QString::number(ui->spinBoxFrequency->value());
         QElapsedTimer timer;
-        int waveSampling;
-        int i = 0;
+        uint waveFrequency;
+        uint sampleRateHz = ui->spinBoxSampling->value();
+        double sampleRateMs = 1000/sampleRateHz;
+        double elapsedSamplingRateMs = sampleRateMs;
+        double y;
+
         ui->pushButton->setText("Stop");
         timer.start();
         // Po wcisnieciu start rozpoczyna petle która czeka na tyle żeby próbkowanie się zgadzało
         while (ui->pushButton->text() == "Stop")
         {
-            waveSampling = ui->spinBoxSampling->value();
-            if (timer.elapsed() > 1000/waveSampling)
+            sampleRateHz = ui->spinBoxSampling->value();
+            sampleRateMs = 1000/sampleRateHz;
+            if (timer.elapsed() >= elapsedSamplingRateMs) // Czekaj na próbkowanie
             {
-                outputLabel->setText(QString::number(i++));
-                timer.restart();
+                waveFrequency = ui->spinBoxFrequency->value();
+                y = sin(2*M_PI*elapsedSamplingRateMs/1000*waveFrequency); // Oblicz wartość fali
+                if (ui->comboBoxShape->currentIndex() == 1) // Jeżeli kwadratowa to przybliż do całości
+                {
+                    if (y > 0)
+                        y = 1;
+                    if (y <= 0)
+                        y = -1;
+                }
+                outputLabel->setText(QString::number(y)); // Wyświetl wartość fali
+                elapsedSamplingRateMs += sampleRateMs; // Kiedy następne próbkowanie
             }
             QCoreApplication::processEvents(QEventLoop::AllEvents, 1);
         }

@@ -2,6 +2,7 @@
 
 #include <QMainWindow>
 #include <QElapsedTimer>
+#include <math.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class GeneratorFali; }
