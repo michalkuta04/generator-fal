@@ -73,7 +73,7 @@
       <item row="2" column="1">
        <widget class="QSpinBox" name="spinBoxSampling">
         <property name="suffix">
-         <string>Hz</string>
+         <string>ms</string>
         </property>
         <property name="minimum">
          <number>1</number>
@@ -147,6 +147,19 @@
       <enum>Qt::ScrollBarAlwaysOff</enum>
      </property>
     </widget>
+   </widget>
+   <widget class="QLabel" name="debugLabel">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>40</y>
+      <width>461</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
