@@ -24,7 +24,6 @@ void GeneratorFali::on_pushButton_clicked()
     QPen pen;
     pen.setWidth(4);
     std::vector<std::tuple<double, double>> waveValues;
-    double x1, x2, y1, y2;
     if (ui->pushButton->text() == "Start")
     {
         std::tuple<double, double> lastValue;
